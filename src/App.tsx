@@ -6,10 +6,10 @@ import { Route, Switch,  BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import configureStore,{history} from "./store";
-import DeviceInfoContainer from './pages/DeviceInfo/';
-import LoginInfoContainer  from './pages/Login/';
-import Header from './components/Header/';
-import Footer from './components/Footer/';
+import DeviceInfoContainer from 'pages/DeviceInfo/';
+import LoginInfoContainer  from 'pages/Login/';
+import Header from 'components/Header/';
+import Footer from 'components/Footer/';
 import './App.css';
 
 

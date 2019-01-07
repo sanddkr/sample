@@ -47,8 +47,15 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js', '.json', '/index.tsx', '/index.ts', '.jsx'],
+		alias: {
+			components: path.resolve(__dirname, 'src/components'),
+			pages: path.resolve(__dirname, 'src/pages'),
+			layout: path.resolve(__dirname, 'src/layout'),
+			helper: path.resolve(__dirname, 'src/helper'),
+		},
 	},
 	devServer: {
 		historyApiFallback: true,
-	}
+		open: 'chrome'
+	},
 };

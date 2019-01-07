@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DeviceForm from '../../components/Forms/DeviceInfo/';
+import DeviceForm from 'components/Forms/DeviceInfo/';
 // import { Component } from 'react';
 // import { RouteProps, RouteComponentProps } from 'react-router';
 // import { RouteComponentProps } from 'react-router-dom';
@@ -8,7 +8,7 @@ import DeviceForm from '../../components/Forms/DeviceInfo/';
 // import {bindActionCreators} from "redux";
 // import {connect} from "react-redux";
 // import * as actions from "../actions/repoAction";
-import GeneralLayout from '../../layout/General/';
+import GeneralLayout from 'layout/General/';
 
 export const DeviceInfoContainer = (props) => {
     const imageProp = {

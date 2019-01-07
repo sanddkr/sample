@@ -14,17 +14,17 @@ describe("login Component", () => {
         expect(wrapper.children().length).not.toBeLessThan(1);
     });
     it('Check if validateUsername gets validated properly', () => {
-        expect(wrapper.instance().validateUsername('naveed')).toBeTruthy();
+        expect(wrapper.instance().validateUsername('sandeep')).toBeTruthy();
         
-        expect(wrapper.instance().validateUsername('n@veed')).toBeFalsy();
+        expect(wrapper.instance().validateUsername('s@ndeep')).toBeFalsy();
         expect(wrapper.instance().validateUsername()).not.toBeTruthy();
-        expect(wrapper.instance().validateUsername('nvd')).not.toBeTruthy();
-        expect(wrapper.instance().validateUsername('nvdnvdnvdnvdnvdnvdnvd')).not.toBeTruthy();
+        expect(wrapper.instance().validateUsername('sand')).not.toBeTruthy();
+        expect(wrapper.instance().validateUsername('sandsandsandsandsandsand')).not.toBeTruthy();
     });
     it('Check if passowrd gets validated properly', () => {
-        expect(wrapper.instance().validatePassword('naveeda')).toBe('');
-        expect(wrapper.instance().validatePassword('naveed')).toBe('Password length did not match');
-        expect(wrapper.instance().validatePassword('nvdnvdnvdnvdnvdnvdnvd')).toBe('Password length did not match');
+        expect(wrapper.instance().validatePassword('sandeepa')).toBe('');
+        expect(wrapper.instance().validatePassword('sandeep')).toBe('Password length did not match');
+        expect(wrapper.instance().validatePassword('sandsandsandsandsandsand')).toBe('Password length did not match');
         expect(wrapper.instance().validatePassword('')).toBe('Password is empty');
         expect(wrapper.instance().validatePassword()).toBe('Password is empty');
     });
@@ -40,7 +40,7 @@ describe("login Component", () => {
         expect(mockFn).toHaveBeenCalledTimes(1);  */
         expect(wrapper.instance().validateForm({
             target: {
-                username: {value: 'naveed'}, password: {value: 'naveeda'}
+                username: {value: 'sandeep'}, password: {value: 'sandeepa'}
             }
         })).toBeTruthy()
     });

@@ -1,7 +1,7 @@
 import * as React from 'react';;
 // import { Component } from 'react';
-import LoginForm from '../../components/Forms/Login/';
-import GeneralLayout from '../../layout/General/';
+import LoginForm from 'components/Forms/Login/';
+import GeneralLayout from 'layout/General/';
 
 export const LoginInfoContainer = (props) => {
     const imageProp = {

@@ -10,7 +10,14 @@
         "outDir": "./distr/",
         "typeRoots": [
             "node_modules/@types"
-        ]
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "components/*": ["src/components/*"],
+			"pages/*": ["src/pages/*"],
+			"layout/*": ["src/layout/*"],
+			"helper/*": ["src/helper/*"],
+        }
     },
     "include": [
         "./src/**/*"

@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --mode=development --hotOnly --config react.config.js",
+    "start": "webpack-dev-server --mode development --port 3000 --hotOnly --config react.config.js",
     "build": "webpack --mode production --env production --config react.config.js",
     "test": "jest"
   },

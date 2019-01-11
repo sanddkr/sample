@@ -16,7 +16,7 @@
             "components/*": ["src/components/*"],
 			"pages/*": ["src/pages/*"],
 			"layout/*": ["src/layout/*"],
-			"helper/*": ["src/helper/*"],
+			"helper/*": ["src/helper/*"]
         }
     },
     "include": [

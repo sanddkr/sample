@@ -10,12 +10,15 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-fontawesome": "^1.6.4",
     "@types/react-router-dom": "^4.3.1",
+    "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.16.0",
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
     "popper": "^1.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/register": "^7.0.0",
@@ -37,6 +40,7 @@
     "glob": "^7.1.3",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "node-sass": "^4.9.1",
     "path": "^0.12.7",
@@ -71,7 +75,11 @@
       "<rootDir>/src/**/*/?(*.)(spec|test).{js,jsx,mjs,tsx}",
       "<rootDir>/**/?(*.)(spec|test).{js,jsx,mjs,tsx}"
     ],
-    "moduleNameMapper":{
+    "moduleNameMapper": {
+      "^components(.*)$": "<rootDir>/src/components$1",
+      "^pages(.*)$": "<rootDir>/src/pages$1",
+      "^layout(.*)$": "<rootDir>/src/layout$1",
+      "^helper(.*)$": "<rootDir>/src/helper$1",
       "\\.(css|less|scss|sass)$": "identity-obj-proxy",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/jest/__mocks__/fileMock.js"
     }

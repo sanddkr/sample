@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Header  component renders correctly using snapshots 1`] = `
+<div
+  className="wrapper headerwrap fixed-top"
+>
+  <div
+    className="container"
+  >
+    <header
+      className="text-center"
+    >
+      Activate Your Device
+    </header>
+  </div>
+</div>
+`;

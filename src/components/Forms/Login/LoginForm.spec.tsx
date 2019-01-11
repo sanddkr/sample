@@ -23,7 +23,7 @@ describe("login Component", () => {
     });
     it('Check if passowrd gets validated properly', () => {
         expect(wrapper.instance().validatePassword('sandeepa')).toBe('');
-        expect(wrapper.instance().validatePassword('sandeep')).toBe('Password length did not match');
+        expect(wrapper.instance().validatePassword('sand')).toBe('Password length did not match');
         expect(wrapper.instance().validatePassword('sandsandsandsandsandsand')).toBe('Password length did not match');
         expect(wrapper.instance().validatePassword('')).toBe('Password is empty');
         expect(wrapper.instance().validatePassword()).toBe('Password is empty');

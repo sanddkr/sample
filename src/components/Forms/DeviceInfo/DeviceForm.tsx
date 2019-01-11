@@ -3,9 +3,10 @@ import { Component } from 'react';
 
 import './DeviceForm.scss'
 import { DeviceFormState } from './DeviceInfo.state';
-import { FormRegex } from '../../../helper/';
-import TextBoxTooltip from '../../TextBoxTooltip/';
-import Modal from '../../Modal/'
+import { FormRegex } from 'helper/index';
+import TextBoxTooltip from 'components/TextBoxTooltip/index';
+import Modal from 'components/Modal/index';
+import axios from 'axios';
 
 export class DeviceForm extends Component<{}, DeviceFormState> {
     csnRegx = FormRegex.csnRegx;
@@ -16,7 +17,8 @@ export class DeviceForm extends Component<{}, DeviceFormState> {
         super(props);
         this.state= {
             csnValid: false,
-            imeiValid: false
+            imeiValid: false,
+            articles: undefined
         };
         this.onInputChange = this.onInputChange.bind(this);
         this.isFieldsValid = this.isFieldsValid.bind(this);
@@ -39,10 +41,15 @@ export class DeviceForm extends Component<{}, DeviceFormState> {
     }
     key === 'csn' ? this.setState({csnValid: stateResult}) : this.setState({imeiValid: stateResult})
   }
-
-  setDeviceInfo(formEle) {
-    window.location.href='/login';
+  async setDeviceInfo(formEle) {
+    // window.location.href='/login';
+    const response = await fetch('GET_ARTICLES_URL');
+    if (!response.ok) throw new Error(response.statusText);
+    const data = await response.json();
+    // Some operations on data if needed...
+    return data;
   }
+
   render() {
     return (
         <form className='mt-5' onSubmit={(event: React.FormEvent<HTMLFormElement>) => {event.preventDefault();this.setDeviceInfo(event.target)}}>
@@ -54,28 +61,6 @@ export class DeviceForm extends Component<{}, DeviceFormState> {
                         <p>This is csn input tooltip</p>
                     </TextBoxTooltip>
                 </div>
-                {/* <a data-toggle="modal" href="#exampleModal">
-                    Link for modal
-                </a>
-                <div className="modal" tabIndex={-1} id="exampleModal" role="dialog">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title">Modal title</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <p>Modal body text goes here.</p>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                        </div>
-                    </div>
-                </div> */}
                 <Modal>
                     {{
                         modalheader: 'Modal title from comp',
